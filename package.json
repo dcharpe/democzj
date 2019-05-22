@@ -25,6 +25,7 @@
     "passport-local": "^1.0.0",
     "paypal": "^1.0.1",
     "paypal-rest-sdk": "^1.8.1",
+    "strip": "^3.0.0",
     "stripe": "^7.0.0"
   }
 }
