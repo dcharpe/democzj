@@ -1,0 +1,31 @@
+<% include layout%>
+<div class="row">
+        <div class="column side">
+        </div>
+        <div class="column middle">
+<p>Payment</p>
+<br><img src='<%= inventory.img %>' style="height: 10%" width="10%" >	
+<b><p><%= inventory.vin %></p></b>
+<b><p><%= inventory.year %> <%= inventory.make %> <%= inventory.model %></p></b>
+<b><p><%= inventory.color %></p></b>
+<br>
+<a href="/edit/<%= inventory.id %>">Edit</a> 
+<br>
+<form action="/payment/<%= inventory.id %>" method="POST">
+    <script 
+    src='https://checkout.stripe.com/checkout.js' 
+    class='stripe-button' 
+    data-key='pk_test_Htwe8bdJLjf08HZ89Tg099lc006K5Pvw96' 
+    data-amount='1000' 
+    data-name='<%= inventory.vin %>'
+    data-description='Posting <%= inventory.year %> <%= inventory.make %> <%= inventory.model %>'
+    data-locale='auto'
+    data-currency='usd'
+    ></script>
+
+    <input type="hidden" name="chargeAmount" value="1000">
+</form>
+
+
+</div>
+</div>

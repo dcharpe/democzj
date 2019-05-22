@@ -1,0 +1,45 @@
+<% include layout %>
+<div class="row">
+	<div class="column side">
+	</div>
+	<div class="column middle">
+			<p> DASHBOARD</p>
+			<p> Welcome <%= user.username %></p>
+			<br><br>
+		<% for(var key in inventories){ %>
+			<%var v = inventories[key];%>
+			<% for(var u in users){ %>
+				<% var un = users[u]; %>
+				<% if(v.seller == user.id && v.seller == un.id) {%>
+					<div class="row_card">
+							<div class="column_card">
+							<a href="/single/<%= v.id %>"> 
+								<div class="card">
+					<img src='<%= v.img %>' style="height: 10%" width="10%" >
+					<br>
+				<b><%= v.vin %></b><br><b> <%= v.year %></b><b> <%= v.make %></b><b> <%= v.model %></b>
+				<br><b> <%= v.color %></b>
+				<br><b> <%= v.price %></b>
+				<br><b> <%= v.zip %></b>		
+				<br><b> <%= un.username %></b>	
+
+				<br>
+				<% if(v.payment) {%>
+					<a href="/#/<%= v.id %>">Remove</a>
+				<% } else {%>
+               
+				<a href="/edit/<%= v.id %>">Edit</a> 
+				<a href="/fileUpload/<%= v.id %>">Upload</a> 
+                <a href="/delete/<%= v.id %>">Delete</a> 
+				<a href="/payment/<%= v.id %>">Pay</a>
+				<%} %>
+				<br><br>
+			</div></a>
+		</div>
+
+				<%} %>
+				
+			<%} %>
+		<%} %>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<% include layout %>
+		<div class="row">
+  <div class="column side">
+	
+</div>
+<div class="column middle">    
+		<%= messages("message", locals) %>
+	<h2>Manage: <%= inventory.year %>  <%= inventory.make %> <%= inventory.model %></h2>
+	<p> Price: <%= inventory.price %></p>
+	<p> Color: <%= inventory.color %></p>
+	<p> Type: <%= inventory.type %></p>
+	<p> Condition: <%= inventory.condition %></p>
+	<p> Features/Description: <%= inventory.feature %></p>
+	<p> Certified: <img src="<%= inventory.certified %>" alt="Image"> </p>
+	<p> Paid: <%= inventory.payment %></p>
+	<p> Contact Seller: <%= user %></p>
+	<hr>
+	<p>
+		
+		<% if(inventory.payment){ %>
+			<button><a href='/edit/<%= inventory.id %>'>Edit</a></button>
+			
+				<button ><a class='sold' href='#' data-id="<%= inventory.id %>">sold</a></button>
+			
+		<% } else {%>
+			<button><a href='/edit/<%= inventory.id %>'>Edit</a></button>
+			<button><a href='/payment/<%= inventory.id %>'>Pay</a></button>
+			<button><a class='delete-inventory' href='#' data-id="<%= inventory.id %>">Delete</a></button>
+		<% } %>
+	</p>
+
+	<br>
+	<button onclick="goBack()">Go Back</button>
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../webroot/js/main.js"></script>
+

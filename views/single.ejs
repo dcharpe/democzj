@@ -1,0 +1,17 @@
+<% include layout %>
+<div class="row">
+	<div class="column side">
+	</div>
+	<div class="column middle">
+			<p> TO PREVENT SCAMS WE URGE YOU TO VERIFY BY VIN PRIOR TO COMPLETING TRANSACTIONS</p>
+			<br><br>
+				<b><%= inventories.vin %></b><br><b> <%= inventories.year %></b><b> <%= inventories.make %></b><b> <%= inventories.model %></b>
+				<br><img src='<%= inventories.img %>' style="height: 10%" width="10%" >	
+				<br><b> <%= inventories.color %></b>
+				<br><b> <%= inventories.price %></b>
+				<br><b> <%= inventories.zip %></b>		
+				<br><b> <%= seller %></b>	
+				<br><br><br>
+	
+	</div>
+</div>

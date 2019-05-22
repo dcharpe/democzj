@@ -1,0 +1,17 @@
+
+<div class="row">
+	<div class="column side">
+	</div>
+	<div class="column middle">    
+		<h1>Create An Account For A Better Experience</h1>
+		<%= typeof msg != "undefined" ? msg : " " %>
+		<form action="/fileUpload/<%= inventory.id %>" enctype="multipart/form-data" method="POST">
+            <!-- <input type="file" name="photo" multiple> -->
+            <input type="file" name="photo" >
+			<button type="submit" value="Upload photo">Upload</button>
+		</form>
+	
+			<br>
+		<img src='<%= typeof file != "undefined" ? file : " " %>'>
+	</div>
+</div>

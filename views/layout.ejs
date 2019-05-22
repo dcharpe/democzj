@@ -1,0 +1,182 @@
+<% include message %>
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style>
+				* {
+		  box-sizing: border-box;
+		}
+		body {
+		  margin: 0;
+		  background-color: #f1f1f1;
+		  color:brown;
+		}
+		/* Style the header */
+		.header {
+		  background-color: #f1f1f1;
+		  padding: 1px;
+		  text-align: center;
+		  color: brown;
+		}
+		/* Style the top navigation bar */
+		.topnav {
+		  overflow: hidden;
+		  background-color: brown;
+		}
+
+		/* Style the topnav links */
+		.topnav a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+		/* Change color on hover */
+		.topnav a:hover, .dropdown:hover .dropbtn {
+		  background-color: grey;
+		  color: #f1f1f1;
+		}
+
+		/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+		@media screen and (max-width: 400px) {
+		  .topnav a {
+			float: none;
+			width: 100%;
+		  }
+		}
+
+		/* Create three unequal columns that floats next to each other */
+		.column {
+		  float: left;
+		  padding: 10px;
+		}
+
+		/* Left and right column */
+		.column.side {
+		  width: 20%;
+		}
+
+		/* Middle column */
+		.column.middle {
+		  width: 80%;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+		  .column.side, .column.middle {
+			width: 100%;
+		  }
+		}
+		.footer {
+		  background-color: brown;
+		  padding: 1px;
+		  text-align: center;
+		  color: #f1f1f1;
+		  position: fixed;
+		  bottom: 0px; 
+		  width: 100%;
+		}
+
+		/* row with padding */
+		.row-padding:after,.row-padding:before {
+			content:"";
+			display:table;
+			clear:both;
+			padding:0 8px;
+			padding-bottom:10px;
+			padding-top:10px;
+		}
+		.third{
+			float:left;
+			width:25%;
+		}
+
+		@media (min-width:601px){
+			third{
+				width:33.33333%;
+			}
+		}
+
+		.thumbnail img{
+			max-height: 150px;
+		}
+
+/* Float four columns side by side */
+.column_card {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row_card {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row_card:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column_card {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+		</style>
+	</head>
+	<body>
+		<div>
+		<header>
+		<div class="header">
+			<h1>CZJ</h1><small>YOUR SHOPPING EXPERIENCE STARTS HERE</small>
+		</div>
+		<div class="topnav">
+		<% if(user) { %>
+			<a href="/dashboard">Dashboard</a>
+			<a a href="/">Inventory</a>
+			<a href='/add'>Upload Vehicle</a>
+			<div style='float:right'>
+				<a href="/logout">LogOut</a>
+			</div>
+		<% } else { %>
+				<a href="/">Inventory</a>
+				<a href="/partner">Finance</a>
+				<div style='float:right'>
+					<a href="/register">SignUp</a>
+				</div>
+				<div style='float:right'>
+					<a href="/login">Login</a>
+				</div>
+		<% } %>
+
+		</div>
+		</header>
+		</div>
+		<%= messages("message", locals) %>
+		
+	</body>
+</html>

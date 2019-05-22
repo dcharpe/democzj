@@ -1,0 +1,67 @@
+<% include layout %>
+<div class="row">
+	<div class="column side">
+	</div>
+	<div class="column middle">
+			<p> TO PREVENT SCAMS WE URGE YOU TO VERIFY BY VIN PRIOR TO COMPLETING TRANSACTIONS</p>
+			<br><br>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Zip Code" title="ZipCode">
+			
+			<br><br>
+			
+					 
+		<% for(var key in inventories){ %>
+			<%var v = inventories[key];%>
+			
+			<% for(var u in users){ %>
+				<% var un = users[u]; %>
+				<% if(v.seller == un.id) {%>
+					
+					<div class="row_card">
+							<div class="column_card">
+									<a href="/single/<%= v.id %>"> <div class="card">
+							
+											<img src='<%= v.img %>' alt="<%= un.username %>"style="width: 70%" height="300">	
+											<div class="container">
+												<h4><b><%= v.vin %></b><br><b> <%= v.year %></b><b> <%= v.make %></b><b> <%= v.model %></b></h4> 
+												<p> <%= v.color %></p>
+												<p> <%= v.price %></p>
+												
+												<p> <%= v.zip %></p>
+											
+												<p> <%= un.username %></p>
+											</div>
+			</div></a>
+		</div>
+
+			
+			
+				<% } %>
+			<%} %>
+		
+		<%} %>
+	
+	</div>
+</div>
+
+<script src="script.js"></script> 
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            } else {
+            tr[i].style.display = "none";
+            }
+        }       
+        }
+    }
+</script>

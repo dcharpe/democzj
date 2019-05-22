@@ -1,0 +1,64 @@
+<% include layout %>
+<div class="row">
+  <div class="column side">
+	
+</div>
+<div class="column middle">    
+<h2>Upload Inventory</h2>
+<p> <%= user.username %></p>
+	<form action="add" method="POST">
+		<label>VIN </label>
+		<div class="col-sm-10">
+			<input name="vin" type="text">
+		</div>
+		<br>
+		<label>Year </label>
+		<div class="col-sm-10">
+			<input name="year" type="text">
+		</div>
+		<br>			
+		<label>Make </label>
+		<div class="col-sm-10">
+			<input name="make" type="text">
+		</div>
+		<br>	
+		<label>Model </label>
+		<div class="col-sm-10">
+			<input name="model" type="text">
+		</div>
+		<br>
+		<label>Price </label>
+		<div class="col-sm-10">
+			<input name="price" type="text">
+		</div>
+		<br>
+		<label>Color </label>
+		<div class="col-sm-10">
+			<input name="color" type="text">
+		</div>
+		<br>
+		<label>Type </label>
+		<div class="col-sm-10">
+			<input name="type" type="text">
+		</div>
+		<br>
+		<br>
+		<label>Features </label>
+		<div class="col-sm-10">
+			<input name="feature" >
+		</div>
+		<br>
+		<br>
+		<label>Zip Code </label>
+		<div class="col-sm-10">
+			<input name="zip" >
+		</div>
+		<br>
+		<br>
+		<button type="submit" value="Submit">Certify</button>
+	</form>	
+	<br>
+	<button onclick="goBack()">Go Back</button>
+</div>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
