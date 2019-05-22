@@ -1,4 +1,5 @@
 import mongoose, { connect, connection } from 'mongoose';
+
 connect('mongodb://localhost/carzam', { useNewUrlParser: true });
 
 var db = connection;
